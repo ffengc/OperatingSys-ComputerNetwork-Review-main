@@ -1,0 +1,3 @@
+hello perror: Success
+hello write(stderr)
+hello cerr
