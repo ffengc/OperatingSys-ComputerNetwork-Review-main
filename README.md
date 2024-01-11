@@ -19,4 +19,6 @@
 
 - Unit6-shm: SystemV架构的基本进程间通信
 
+- Unit6-shm-pipe: 带有管道控制的SystemV通信
+
 - Unit7: 信号
