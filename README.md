@@ -18,3 +18,5 @@
 - Unit6-ProcessPool: 基于管道通信的进程池
 
 - Unit6-shm: SystemV架构的基本进程间通信
+
+- Unit7: 信号
