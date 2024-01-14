@@ -1,35 +1,46 @@
 
+
 #include <iostream>
 #include <signal.h>
 #include <unistd.h>
+#include <assert.h>
 
 #if 0
-void catchSig(int sig)
+void handler(int signum)
 {
-    // 此时的sig就是捕捉到的信号的编号
-    std::cout << "进程捕捉到到了一个信号: " << sig << ", pid: " << getpid() << std::endl;
+    std::cout << "捕获了一个信号: " << signum << std::endl;
 }
-
 int main()
 {
-    signal(SIGINT, catchSig);
+    // 内核数据类型，但是我们下面这些定义是在user栈上定义的
+    struct sigaction act, oact;
+    act.sa_flags = 0;
+    sigemptyset(&act.sa_mask);
+    act.sa_handler = handler;
+    // 把上面定义的东西丢到进程的pcb里面去
+    sigaction(2, &act, &oact);
+    std::cout << "default action: " << oact.sa_handler << std::endl;
     while (true)
-    {
-        std::cout << "running ... pid: " << getpid() << std::endl;
         sleep(1);
-    }
     return 0;
 }
 #endif
 
+int flag = 0;
+void changeFlag(int signum)
+{
+    (void)signum;
+    std::cout << "change flag: " << flag;
+    flag = 1;
+    std::cout << "->" << flag << std::endl;
+}
 int main()
 {
-    // 这里就可以计算count能计算多少次了（可以吗？）
-    alarm(1);
-    int count = 0;
-    while (true)
+    signal(2, changeFlag); // 收到二号信号去改一下全局的flag
+    while (!flag)          // 如果flag还是0
     {
-        std::cout << "count: " << count++ << std::endl;
+        sleep(1);
     }
+    std::cout << "进程正常退出后: " << flag << std::endl;
     return 0;
 }

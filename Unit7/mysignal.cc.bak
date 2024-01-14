@@ -1,0 +1,107 @@
+
+#include <iostream>
+#include <signal.h>
+#include <unistd.h>
+#include <assert.h>
+
+#if 0
+void catchSig(int sig)
+{
+    // 此时的sig就是捕捉到的信号的编号
+    std::cout << "进程捕捉到到了一个信号: " << sig << ", pid: " << getpid() << std::endl;
+}
+
+int main()
+{
+    signal(SIGINT, catchSig);
+    while (true)
+    {
+        std::cout << "running ... pid: " << getpid() << std::endl;
+        sleep(1);
+    }
+    return 0;
+}
+#endif
+
+#if 0
+int main()
+{
+    // 这里就可以计算count能计算多少次了（可以吗？）
+    alarm(1);
+    int count = 0;
+    while (true)
+    {
+        std::cout << "count: " << count++ << std::endl;
+    }
+    return 0;
+}
+
+
+int main()
+{
+    // 处理信号
+    signal(2, SIG_IGN);
+    signal(2, SIG_DFL);
+    return 0;;
+}
+#endif
+
+#if 0
+void catchSig(int signum)
+{
+    std::cout << "捕获到了一个信号: " << signum << std::endl;
+}
+int main()
+{
+    for (int i = 0; i <= 31; i++)
+    {
+        signal(i, catchSig); // 尝试捕捉所有的信号
+    }
+    while (true)
+    {
+        std::cout << "pid: " << getpid() << " running ..."
+                  << "\r";
+        fflush(stdout);
+        sleep(1);
+    }
+    return 0;
+}
+#endif
+
+static void showPending(sigset_t &pending)
+{
+    for (int sig = 1; sig <= 31; sig++)
+    {
+        if (sigismember(&pending, sig))
+            std::cout << "1"; // 说明在这个集合里面
+        else
+            std::cout << "0";
+    }
+    std::cout << "\n";
+}
+
+int main()
+{
+    // 1. 定义信号集对象
+    sigset_t bset, obset;
+    sigset_t pending;
+    // 2. 初始化
+    sigemptyset(&bset);
+    sigemptyset(&obset);
+    sigemptyset(&pending);
+    // 3. 添加我们需要屏蔽的信号
+    sigaddset(&bset, 2);
+    // 4. 设置set到内核对应的进程中 [默认情况: 进程不会block任何信号]
+    int n = sigprocmask(SIG_BLOCK, &bset, &obset);
+    assert(!n);
+    (void)n;
+    // 5. 重复循环打印当前进程的pending信号集
+    while (true)
+    {
+        std::cout << "pid: " << getpid() << ": ";
+        sigpending(&pending); // 获取当前进程的信号集
+        showPending(pending); // 打印当前进程的信号集
+        sleep(1);
+    }
+    return 0;
+}
