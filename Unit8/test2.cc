@@ -8,21 +8,27 @@
 // 如果多个线程同时访问同一个全局变量，并对他进行数据计算，会出问题吗
 // 抢票
 int tickets = 10000;
+pthread_mutex_t mtx = PTHREAD_MUTEX_INITIALIZER;
 void *getTickets(void *args)
 {
     (void)args;
     while (true)
     {
+        pthread_mutex_lock(&mtx);
         if (tickets > 0)
         {
             usleep(1000);
             printf("%p: %d\n", pthread_self(), tickets);
             tickets--;
+            pthread_mutex_unlock(&mtx);
         }
         else
+        {
+            pthread_mutex_unlock(&mtx);
             break; // 没有票了
+        }
+        return nullptr;
     }
-    return nullptr;
 }
 int main()
 {
