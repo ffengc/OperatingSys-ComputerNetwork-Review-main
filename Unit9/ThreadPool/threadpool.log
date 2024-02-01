@@ -1,0 +1,40 @@
+[NORMAL] [1706773901] Thead-0 启动信息
+[NORMAL] [1706773901] Thead-1 启动信息
+[NORMAL] [1706773901] Thead-2 启动信息
+[NORMAL] [1706773901] Thead-3 启动信息
+[NORMAL] [1706773901] 任务制作完成: 22 + 20 = ? 
+[NORMAL] [1706773901] thread: Thead-1, result: 42
+[NORMAL] [1706773902] 任务制作完成: 93 + 3 = ? 
+[NORMAL] [1706773902] thread: Thead-2, result: 96
+[NORMAL] [1706773903] 任务制作完成: 50 + 11 = ? 
+[NORMAL] [1706773903] thread: Thead-3, result: 61
+[NORMAL] [1706773904] 任务制作完成: 35 + 16 = ? 
+[NORMAL] [1706773904] thread: Thead-0, result: 51
+[NORMAL] [1706773905] 任务制作完成: 37 + 25 = ? 
+[NORMAL] [1706773905] thread: Thead-1, result: 62
+[NORMAL] [1706773906] 任务制作完成: 71 + 7 = ? 
+[NORMAL] [1706773906] thread: Thead-2, result: 78
+[NORMAL] [1706773907] 任务制作完成: 79 + 10 = ? 
+[NORMAL] [1706773907] thread: Thead-3, result: 89
+[NORMAL] [1706773908] 任务制作完成: 90 + 1 = ? 
+[NORMAL] [1706773908] thread: Thead-0, result: 91
+[NORMAL] [1706773909] 任务制作完成: 36 + 20 = ? 
+[NORMAL] [1706773909] thread: Thead-1, result: 56
+[NORMAL] [1706773910] 任务制作完成: 34 + 16 = ? 
+[NORMAL] [1706773910] thread: Thead-2, result: 50
+[NORMAL] [1706773911] 任务制作完成: 47 + 8 = ? 
+[NORMAL] [1706773911] thread: Thead-3, result: 55
+[NORMAL] [1706773912] 任务制作完成: 20 + 30 = ? 
+[NORMAL] [1706773912] thread: Thead-0, result: 50
+[NORMAL] [1706773913] 任务制作完成: 2 + 1 = ? 
+[NORMAL] [1706773913] thread: Thead-1, result: 3
+[NORMAL] [1706773914] 任务制作完成: 62 + 18 = ? 
+[NORMAL] [1706773914] thread: Thead-2, result: 80
+[NORMAL] [1706773915] 任务制作完成: 90 + 13 = ? 
+[NORMAL] [1706773915] thread: Thead-3, result: 103
+[NORMAL] [1706773916] 任务制作完成: 49 + 1 = ? 
+[NORMAL] [1706773916] thread: Thead-0, result: 50
+[NORMAL] [1706773917] 任务制作完成: 92 + 1 = ? 
+[NORMAL] [1706773917] thread: Thead-1, result: 93
+[NORMAL] [1706773918] 任务制作完成: 96 + 12 = ? 
+[NORMAL] [1706773918] thread: Thead-2, result: 108
