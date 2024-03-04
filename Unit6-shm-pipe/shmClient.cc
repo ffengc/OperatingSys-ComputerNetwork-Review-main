@@ -41,7 +41,7 @@ void start()
         {
             // 说明读到了
             shmaddr[s - 1] = 0;
-            Signal(fd); // 唤醒对方
+            Signal(fd); // 唤醒对方，对方可以继续写数据进来
             if (strcmp(shmaddr, "quit") == 0)
                 break;
         }
