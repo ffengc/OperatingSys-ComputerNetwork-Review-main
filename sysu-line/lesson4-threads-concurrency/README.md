@@ -95,6 +95,8 @@ int main()
 
 一个来自于密歇根大学的，使用多线程进行矩阵运算的例子[EECS 570: Pthreads Tutorial](https://www.eecs.umich.edu/courses/eecs570/discussions/w22/pthreads.html)
 
+- [code: ](./matrix-calculation/)
+
 ## OpenMP
 
 - Set of compiler directives and an API for C, C++, FORTRAN
