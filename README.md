@@ -40,3 +40,9 @@
 ## `sysu-line`
 
 - lesson2: [process](./sysu-line/lesson2-process/)
+
+- lesson4: [threads and concurrency](./sysu-line/lesson4-threads-concurrency/)
+
+- lesson5: [cpu-scheduling](./sysu/lesson5-cpu-scheduling/)
+
+
