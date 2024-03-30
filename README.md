@@ -43,6 +43,8 @@
 
 - lesson4: [threads and concurrency](./sysu-line/lesson4-threads-concurrency/)
 
-- lesson5: [cpu-scheduling](./sysu/lesson5-cpu-scheduling/)
+- lesson5: [cpu-scheduling](./sysu-line/lesson5-cpu-scheduling/)
+
+- lesson6: [synchronization-tools](./sysu-line/lesson6-synchronization-tools/)
 
 
