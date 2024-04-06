@@ -1,6 +1,5 @@
 # OperatingSys_ComputerNetwork_Review
 
-![](./assets/logo.png)
 
 > **note:**
 > 1. 第一部分是操作系统和计算机网络的[学习主线](./main-line/)，这里面提供的学习线路是最完备最详细的
